@@ -1,0 +1,36 @@
+
+cc_library(
+    name        = 'foundation',
+    visibility  = ["//visibility:public"],
+    includes    = ['Foundation/include'],
+    hdrs        = native.glob(['Foundation/include/Poco/*.h',
+                               'Foundation/include/Poco/Dynamic/*.h']),
+    srcs        = native.glob(['lib/Linux/x86_64/libPocoFoundation.so*'])
+)
+
+cc_library(
+    name        = 'json',
+    visibility  = ["//visibility:public"],
+    includes    = ['JSON/include'],
+    hdrs        = native.glob(['JSON/include/Poco/JSON/*.h']),
+    srcs        = native.glob(['lib/Linux/x86_64/libPocoJSON.so*']),
+    deps        = ['//:foundation']
+)
+
+cc_library(
+    name        = 'net',
+    visibility  = ["//visibility:public"],
+    includes    = ['Net/include'],
+    hdrs        = native.glob(['Net/include/Poco/*.h']),
+    srcs        = ['lib/Linux/x86_64/libPocoNet.so'],
+    deps        = ['//:foundation']
+)
+
+cc_library(
+	name       = 'util',
+    visibility = ["//visibility:public"],
+    includes   = ['Util/include'],
+    hdrs       = native.glob(['Util/include/Poco/*.h']),
+    srcs       = ['lib/Linux/x86_64/libPocoUtil.so'],
+    deps       = ['//:foundation']
+)

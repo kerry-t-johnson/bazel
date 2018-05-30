@@ -1,0 +1,59 @@
+load('@cpptest//:tools/boost.bzl', 'boost_library')
+
+cc_library(
+    name = 'headers',
+    visibility = ["//visibility:public"],
+    includes = [ '.', ],
+    hdrs = glob([
+        "boost/**/*.h",
+        "boost/**/*.hpp",
+        "boost/**/*.ipp",
+    ]),
+)
+
+cc_library(
+    name = 'filesystem',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_filesystem.so*'])
+)
+
+cc_library(
+    name = 'iostreams',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_iostreams.so*'])
+)
+
+cc_library(
+    name = 'log',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_log.so*',
+                        'stage/lib/libboost_log_setup.so*']),
+    defines = ['BOOST_LOG_DYN_LINK'],
+    deps        = ['//:filesystem',
+                   '//:regex',
+                   '//:thread']
+)
+
+cc_library(
+    name = 'program_options',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_program_options.so*'])
+)
+
+cc_library(
+    name = 'regex',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_regex.so*'])
+)
+
+cc_library(
+    name = 'system',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_system.so*'])
+)
+
+cc_library(
+    name = 'thread',
+    visibility = ["//visibility:public"],
+    srcs = native.glob(['stage/lib/libboost_thread.so*'])
+)

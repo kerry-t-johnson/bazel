@@ -1,0 +1,9 @@
+version: "3"
+services:
+
+  cpptest:
+    image: cpptest:latest
+    container_name: cpptest
+    volumes:
+      - .:/home/ubuntu/projects/cpptest
+      - /home/kerry/bazel-build:/home/ubuntu/bazel-build
