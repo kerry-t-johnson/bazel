@@ -1,0 +1,28 @@
+
+ROOT:
+
+  description: |
+    This is a
+    very long
+    description
+
+  dependencies:
+    - foo
+    - bar
+    - name: baz
+      type: composite
+      dependencies:
+        - barney
+        - fred
+    - name: blargle
+      type: oneof
+      dependencies:
+        - betty
+        - wilma
+    - name: fooble
+      type: oneof
+      regex: calv*
+
+foo:
+  dependencies:
+    - bar

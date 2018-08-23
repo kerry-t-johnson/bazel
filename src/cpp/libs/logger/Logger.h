@@ -63,6 +63,8 @@ typedef boost::log::sources::severity_logger<severity> Logger;
 
 std::ostream& operator<<(std::ostream& ostr, severity value);
 
+void init(int argc, char** argv);
+
 } /* namespace logger */
 
 #endif /* LOGGER_LOGGER_H_ */

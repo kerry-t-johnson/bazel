@@ -1,5 +1,18 @@
 
 cc_library(
+    name        = 'htree',
+    includes    = ['src/cpp/libs'],
+    hdrs        = native.glob(['src/cpp/libs/htree/*.h']),
+    srcs        = native.glob(['src/cpp/libs/htree/**/*.cpp',
+                               'src/cpp/libs/htree/**/*.h']),
+    deps        = ['//:logger',
+                   '//:util',
+                   '@boost//:graph',
+                   '@boost//:headers',
+                   '@yaml//:yaml']
+)
+
+cc_library(
     name        = 'logger',
     includes    = ['src/cpp/libs'],
     hdrs        = native.glob(['src/cpp/libs/logger/*.h']),
@@ -56,6 +69,20 @@ cc_binary(
         '//:logger',
         "@gtest//:gtest_main",
         '@poco//:json',
+        '@boost//:program_options',
+        '@boost//:system',
+    ],
+)
+
+cc_binary(
+    name = "htree_test",
+    srcs = native.glob(['test/cpp/bins/htree_test/*.cpp',
+                        'src/cpp/libs/htree/**/*.h']),
+    deps = [
+        '//:htree',
+        '//:util',
+        '//:logger',
+        "@gtest//:gtest_main",
         '@boost//:program_options',
         '@boost//:system',
     ],

@@ -1,0 +1,10 @@
+digraph G {
+0[label=ROOT];
+1[label=foo];
+2[label=bar];
+3[label=baz];
+0->1 ;
+0->2 ;
+0->3 ;
+1->2 ;
+}

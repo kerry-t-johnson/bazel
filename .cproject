@@ -55,6 +55,8 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.489016340" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/cpptest/src/cpp/libs}&quot;"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/sw/boost_1_67_0"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/sw/poco-1.9.0/Foundation/include"/>
@@ -64,6 +66,8 @@
                                     <listOptionValue builtIn="false" value="/opt/sw/poco-1.9.0/Util/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/sw/googletest-release-1.8.0/googletest/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/sw/yaml-cpp-yaml-cpp-0.6.2/include"/>
                                     								
                                 </option>
                                 								

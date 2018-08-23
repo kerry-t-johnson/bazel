@@ -1,0 +1,9 @@
+
+cc_library(
+    name        = 'yaml',
+    visibility  = ["//visibility:public"],
+    includes    = ['include'],
+    hdrs        = native.glob(['include/**/*.h']),
+    srcs        = native.glob(['build/libyaml-cpp.so*'])
+)
+

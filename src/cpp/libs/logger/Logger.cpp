@@ -4,6 +4,11 @@
 
 namespace logger {
 
+void init(int argc, char** argv)
+{
+
+}
+
 std::ostream& operator<< (std::ostream& strm, severity level)
 {
     switch(level) {

@@ -1,0 +1,11 @@
+
+cc_library(
+    name        = 'pqxx',
+    visibility  = ["//visibility:public"],
+    includes    = ['include'],
+    hdrs        = native.glob(['include/**/*'],
+                              exclude = ['include/**/*.md',
+                                         'include/**/*.in']),
+    srcs        = native.glob(['src/.libs/libpqxx.a'])
+)
+
